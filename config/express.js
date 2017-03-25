@@ -1,6 +1,5 @@
 var express 	= require("express");
 var load 		= require("express-load");
-var bodyParser  = require("body-parser");
 
 module.exports = function(){
 
@@ -10,11 +9,7 @@ module.exports = function(){
 	app.set("view engine", "ejs");
 	app.set("views", "./public/view");
 
-	app.use(bodyParser.urlencoded({extended : true}));
-	app.use(bodyParser.json());
-
 	load("routes", {cwd: "public"})
-		//.then("infra")
 		.into(app);
 
 		app.use(function(req,res,next){

@@ -1,4 +1,4 @@
-/*Global*/
+//Mixin
 @mixin border-radius($top, $right, $bottom, $left) {
   -webkit-border-radius: $top $right $bottom $left;
      -moz-border-radius: $top $right $bottom $left;
@@ -6,6 +6,7 @@
           border-radius: $top $right $bottom $left;
 }
 
+//Cores
 $colorWhite: #fff;
 $colorBlack: #000;
 $color1: #ba3638;
@@ -13,38 +14,25 @@ $color2: #909090;
 $color3: #dddddd;
 $color4: #ba3638;
 $color5: #272727;
-/*
-#ba3638
-#330d0e
-
-#dddddd
-#707070
-#909090
-#272727
-*/
-
-.none{
-  display: none;
-}
 
 body {
   text-align: center;
   font-size: 12px;
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Montserrat', 'Arial', sans-serif;
   background-color: #272727;
 
-  main#main{
+  #main{
 
   	padding-top: 20px;
 
-    section#section{
+    #section{
 
     	margin: 0px auto;
     	min-width: 320px;
     	max-width: 500px;
     	height: 200px;
 
-      header#header{
+      #header{
 
       	margin: 0px auto 20px auto;
         padding-bottom: 3.0em;
@@ -75,7 +63,7 @@ body {
 
       }//end - header#header
 
-      article#article{
+      #article{
 
       	background: $colorWhite;
       	margin: 0px auto 0px 30px;
@@ -158,6 +146,7 @@ body {
               right: -210px;
               top: 50px;
               text-align: center;
+              padding: 0px 0px 0px 0px;
               overflow: hidden;
               @include border-radius(10px, 10px, 10px, 10px);
 
@@ -186,13 +175,6 @@ body {
                 @extend .gostam;
                 width: 100px;
                 border-right: 0px;
-                // float: left;
-                // width: 50%;
-                //
-                // p{
-                //   margin: 0px auto;
-                // }
-                // span{}
 
               }//end - nao-gostam
 
@@ -200,7 +182,11 @@ body {
 
           }//end - li
 
-          li:nth-child(2n+2) {
+          li.cor-impar {
+            background: $colorWhite;
+          }
+
+          li.cor-par {
             background: $color3;
           }
 

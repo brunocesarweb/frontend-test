@@ -8,48 +8,26 @@
 </head>
 <body>
 
-	<main id="main">
-		<section id="section">
-			<header id="header">
+	<div id="main">
+		<div id="section">
+			<div id="header">
 				<h2 class="ranking">RANKING</h2>
 				<div class="logo">
 					<img src="/imagens/logo.png" alt="Logo A Fazenda" title="Logo A Fazenda">
 				</div>
-			</header>
-			<article id="article">
+			</div>
 
-				<ul id="lista-classificacao" class="none">
-				  <li>
-				    <div class="dados-posicao">
-				      <div class="img">
-				        <img src="http://im.r7.com/record/files/2C96/1618/3F6E/369D/013F/72F7/CF15/5F4B/Gominho1.jpg" alt="">
-				      </div>
-				      <div class="posicao">1</div>
-				    </div>
-				    <p class="nome">Nome</p>
-				    <p class="descricao">descricao</p>
-				    <div class="avaliacao">
-				      <div class="gostam">
-				        <p>GOSTAM</p>
-				        <span>37%</span>
-				      </div>
-				      <div class="nao-gostam">
-				        <p>NÃO GOSTAM</p>
-				        <span>63%</span>
-				      </div>
-				    </div>
-				  </li>
-				</ul>
-
+			<div id="article">
+			
 				<ul id="lista-classificacao">
 					<%lugar = 1%>
 				  <%for(i=0; i<retornoFazenda.length; i++) {%>
-						<li>
+						<li class="<%=retornoFazenda[i][6]%>">
 							<div class="dados-posicao">
 								<div class="img">
 									<img src="<%=retornoFazenda[i][2]%>" alt="<%=retornoFazenda[i][0]%>" title="<%=retornoFazenda[i][0]%>">
 								</div>
-								<div class="posicao"><%=lugar%></div>
+								<div class="posicao"><%=retornoFazenda[i][5]%></div>
 							</div>
 
 							<p class="nome"><%=retornoFazenda[i][0]%></p>
@@ -74,11 +52,11 @@
 				  <%}%>
 				</ul>
 
-			</article>
-		</section>
-	</main>
+			</div>
+		</div>
+	</div>
 
-	<script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+	<script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
 	<script src="javascripts/main.js"></script>
 </body>
 </html>
