@@ -2,9 +2,7 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-
 	<title>R7 FrontEnd Test</title>
-	
 	<link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
 	<link rel="stylesheet" href="stylesheets/style.css" media="all">
 </head>
@@ -13,25 +11,74 @@
 	<main id="main">
 		<section id="section">
 			<header id="header">
-				<div class="logo"></div>
 				<h2 class="ranking">RANKING</h2>
+				<div class="logo">
+					<img src="/imagens/logo.png" alt="Logo A Fazenda" title="Logo A Fazenda">
+				</div>
 			</header>
 			<article id="article">
-				<ul>
-					<li>um</li>
-					<li>dois</li>
-					<li>tres</li>
-					<li>quatro</li>
-					<li>cinco</li>
+
+				<ul id="lista-classificacao" class="none">
+				  <li>
+				    <div class="dados-posicao">
+				      <div class="img">
+				        <img src="http://im.r7.com/record/files/2C96/1618/3F6E/369D/013F/72F7/CF15/5F4B/Gominho1.jpg" alt="">
+				      </div>
+				      <div class="posicao">1</div>
+				    </div>
+				    <p class="nome">Nome</p>
+				    <p class="descricao">descricao</p>
+				    <div class="avaliacao">
+				      <div class="gostam">
+				        <p>GOSTAM</p>
+				        <span>37%</span>
+				      </div>
+				      <div class="nao-gostam">
+				        <p>NÃO GOSTAM</p>
+				        <span>63%</span>
+				      </div>
+				    </div>
+				  </li>
 				</ul>
 
-<p><%=jsonFazenda.length%></p>
-<p><%=jsonFazenda[0].name%></p>
+				<ul id="lista-classificacao">
+					<%lugar = 1%>
+				  <%for(i=0; i<retornoFazenda.length; i++) {%>
+						<li>
+							<div class="dados-posicao">
+								<div class="img">
+									<img src="<%=retornoFazenda[i][2]%>" alt="<%=retornoFazenda[i][0]%>" title="<%=retornoFazenda[i][0]%>">
+								</div>
+								<div class="posicao"><%=lugar%></div>
+							</div>
+
+							<p class="nome"><%=retornoFazenda[i][0]%></p>
+							<p class="descricao"><%=retornoFazenda[i][1]%></p>
+
+							<div class="avaliacao">
+
+								<div class="gostam">
+									<p>GOSTAM</p>
+									<span><%=retornoFazenda[i][3]%>%</span>
+								</div>
+
+								<div class="nao-gostam">
+									<p>NÃO GOSTAM</p>
+									<span><%=retornoFazenda[i][4]%>%</span>
+								</div>
+
+							</div>
+
+						</li>
+					<%lugar = lugar + 1%>
+				  <%}%>
+				</ul>
 
 			</article>
 		</section>
 	</main>
 
-	<script src="javascripts/main.js"></script> 
+	<script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+	<script src="javascripts/main.js"></script>
 </body>
 </html>

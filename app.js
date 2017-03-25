@@ -15,5 +15,5 @@ var porta = 7007;
 
 //Sobe o servidor
 http.listen(porta, function(){
-	console.log("Running server :-)");
+	console.log("Open: http://localhost:" + porta);
 });

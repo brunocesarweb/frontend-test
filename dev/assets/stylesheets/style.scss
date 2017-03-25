@@ -1,29 +1,240 @@
+/*Global*/
+@mixin border-radius($top, $right, $bottom, $left) {
+  -webkit-border-radius: $top $right $bottom $left;
+     -moz-border-radius: $top $right $bottom $left;
+      -ms-border-radius: $top $right $bottom $left;
+          border-radius: $top $right $bottom $left;
+}
+
+$colorWhite: #fff;
+$colorBlack: #000;
+$color1: #ba3638;
+$color2: #909090;
+$color3: #dddddd;
+$color4: #ba3638;
+$color5: #272727;
+/*
+#ba3638
+#330d0e
+
+#dddddd
+#707070
+#909090
+#272727
+*/
+
+.none{
+  display: none;
+}
+
 body {
   text-align: center;
   font-size: 12px;
   font-family: 'Montserrat', sans-serif;
   background-color: #272727;
-}
 
-body main#main{
-	padding-top: 20px;
-}
+  main#main{
 
-body main#main section#section{
-	margin: 0px auto;
-	min-width: 320px;
-	max-width: 500px;
-	height: 200px;
-}
+  	padding-top: 20px;
 
-body main#main section#section header#header{
-	background: #fff;
-	margin: 0px auto 20px auto;
-	height: 70px;	
-}
+    section#section{
 
-body main#main section#section article#article{
-	background: #fff;
-	margin: 0px auto 0px auto;
-	height: 500px;
-}
+    	margin: 0px auto;
+    	min-width: 320px;
+    	max-width: 500px;
+    	height: 200px;
+
+      header#header{
+
+      	margin: 0px auto 20px auto;
+        padding-bottom: 3.0em;
+      	min-height: 150px;
+        position: relative;
+
+        .logo{
+
+           width: 100%;
+           text-align: left;
+           position: absolute;
+
+        }//end - .logo
+
+        .ranking{
+
+          position: absolute;
+          right: 0px;
+          bottom: 0px;
+          font-size: 2.5em;
+          margin: 0px auto 0px auto;
+          text-align: right;
+          padding: 10px 15px 10px 0px;
+          background: $colorWhite;
+          left: 100px;
+          @include border-radius(5px, 5px, 5px, 5px);
+        }//end - .ranking
+
+      }//end - header#header
+
+      article#article{
+
+      	background: $colorWhite;
+      	margin: 0px auto 0px 30px;
+        @include border-radius(5px, 5px, 5px, 5px);
+
+        ul#lista-classificacao{
+
+          list-style-type: none;
+          text-align: left;
+          padding: 0px;
+
+          li{
+
+            padding: 40px 20px 40px 150px;
+            position: relative;
+
+            .dados-posicao{
+
+              position: absolute;
+              left: 10px;
+              top: 5px;
+
+              .img{
+                border: 5px solid $color1;
+                height: 120px;
+                width: 120px;
+                overflow: hidden;
+                @include border-radius(70px, 70px, 70px, 70px);
+
+                img{
+                  height: 120px;
+                  width: 140px;
+
+                }//end - img
+
+              }//end - img
+
+              .posicao{
+
+                position: absolute;
+                padding: 1px 8px 0px 8px;
+                bottom: 5px;
+                right: 5px;
+                color: $color2;
+                background: $colorWhite;
+                font-size: 1.5em;
+                font-weight: bold;
+                line-height: normal;
+                border: 1px solid $color2;
+                @include border-radius(70px, 70px, 70px, 70px);
+
+              }//end - .posicao
+
+            }//end - .dados-posicao
+
+            p.nome{
+
+              color: $color1;
+              font-size: 2.0em;
+              padding: 0px 0px 0px 20px;
+              margin-top: 0px;
+              margin-bottom: 0px;
+
+            }//end - p.nome
+
+            p.descricao{
+
+              color: $color2;
+              font-size: 1.3em;
+              padding: 0px 0px 0px 20px;
+              margin-top: 0px;
+
+            }//end - p.descricao
+
+            .avaliacao{
+              display: none;
+              background: $colorWhite;
+              position: absolute;
+              width: 200px;
+              right: -210px;
+              top: 50px;
+              text-align: center;
+              overflow: hidden;
+              @include border-radius(10px, 10px, 10px, 10px);
+
+              .gostam{
+
+                float: left;
+                width: 99px;
+                border-right: 1px solid #000;
+
+                p{
+                  margin: 0px auto;
+                  background: $color1;
+                  font-weight: bold;
+                  color: $colorWhite;
+                  padding: 5px 0px;
+                }
+                span{
+                  font-weight: bold;
+                  color: $color2;
+                  font-size: 2em;
+                }
+
+              }//end - gostam
+
+              .nao-gostam{
+                @extend .gostam;
+                width: 100px;
+                border-right: 0px;
+                // float: left;
+                // width: 50%;
+                //
+                // p{
+                //   margin: 0px auto;
+                // }
+                // span{}
+
+              }//end - nao-gostam
+
+            }//end - avaliacao
+
+          }//end - li
+
+          li:nth-child(2n+2) {
+            background: $color3;
+          }
+
+          li:hover{
+            background: $color4;
+
+            .dados-posicao{
+
+              .img{
+                  border-color: $colorWhite;
+                }              
+
+            }
+
+            p.nome{
+              color: $colorWhite;
+            }
+
+            p.descricao{
+              color: $color5;
+            }
+
+            .avaliacao{
+              display: block;
+            }
+
+          }//end - li hover
+
+        }//end - ul#lista-classificacao
+
+      }//end - article
+
+    }//end - section#section
+
+  }//end - main#main
+
+}//end - body
