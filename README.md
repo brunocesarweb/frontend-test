@@ -34,38 +34,42 @@ Esse comando sobe o servidor no endereço local e gera uma url para ser acessado
 Estrutura de pastas do projeto:
 
 Módulos do node:
-node_modules/
+node_modules/  
+
 Pasta contendo os módulos do node que foram instalados para uso no projeto.
 
 Express, esse projeto utiliza o framework expressjs e nessa pasta o arquivo express é configurado
-config/
-	express.js
+config/  
+	express.js  
+
 Aqui são carregados os módulos do express e o load para o carregamento da página, e são setados as rotas que serão usadas nesse projeto.
 
 Pasta onde ficam os assets que serão usados para o desenvolvimento:
-dev/
-	assets/
-		imagens/
-		javascripts/
-		stylesheets/
+dev/  
+	assets/  
+		imagens/  
+		javascripts/  
+		stylesheets/  
+
 Os assets da pasta dev são os que serão alterados pelo desenvolvedor para serem gerados os arquivos minificados depois pelo gulpjs.
 
 Requisitos do projeto:
-requisitos-projeto/
+requisitos-projeto/  
+
 A pasta contém as informações do projeto, psd e imagens de exemplo.
 
 Pasta que subirá com o servidor:
-public/
-	assets/
-		imagens/
-		javascripts/
-		stylesheets/
-	json/
-		fazenda.json
-	routes/
+public/  
+	assets/  
+		imagens/  
+		javascripts/  
+		stylesheets/  
+	json/  
+		fazenda.json  
+	routes/  
 		home.js
-	view/
-		home/
+	view/  
+		home/  
 			index.ejs
 
 A pasta public é a pasta que irá subir para o servidor no endereço local, dentro dela estão várias outras pastas.
